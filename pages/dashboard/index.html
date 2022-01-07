@@ -1,0 +1,982 @@
+<!doctype html>
+<html>
+<head>
+    <title>SmartHome</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../cdn/css/look_css/css/look_base_v2.css"/>
+    <link rel="stylesheet" href="../../cdn/css/vendor/sweetalert.css">
+    <link rel="stylesheet" href="../../cdn/css/fontawesome-5.13.0-web/css/all.css">
+    <link rel="stylesheet" href="../../cdn/css/vendor/animate.css"/>
+    <link rel="stylesheet" href="../../cdn/css/style/style.css"/>
+</head>
+
+<body class="">
+
+<div class="h-100 row overflow-hidden g-0">
+
+    <div class="col-lg-1 border-end bg-white d-lg-block d-none">
+        <div class="py-2 d-flex align-content-between flex-wrap align-items-center " style="height:100%">
+
+            <img src="../../cdn/images/full_logo.png" class="mx-auto w-max-80" />
+
+            <div class="nav flex-column mx-auto w-100 nav-pills pill_navigation" id="" aria-orientation="vertical">
+                <button class="nav-link active" type="button">
+                    <i class="fab fa-microsoft fa-2x"></i>
+                    <span class="animated fadeIn font-sm">Dashboard</span>
+                </button>
+                <button class="nav-link">
+                    <i class="fa fa-envelope fa-2x"></i>
+                    <span class="animated fadeIn font-sm">Messages</span>
+                </button>
+
+                <button class="nav-link">
+                    <i class="fa fa-users fa-2x"></i>
+                    <span class="animated fadeIn font-sm">Users</span>
+                </button>
+
+                <button class="nav-link">
+                    <i class="fa fa-lock fa-2x"></i>
+                    <span class="animated fadeIn font-sm">Lock</span>
+                </button>
+
+                <button class="nav-link">
+                    <i class="fa fa-cog fa-2x"></i>
+                    <span class="animated fadeIn font-sm">Settings</span>
+                </button>
+
+            </div>
+
+
+            <div class="nav flex-column mx-auto w-100 nav-pills pill_navigation" aria-orientation="vertical">
+                <button class="nav-link" type="button">
+                    <i class="fa fa-sign-out-alt text-danger fa-2x"></i>
+                    <span class="animated bg-danger fadeIn font-sm">Sign Out</span>
+                </button>
+                </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-lg-11 h-100 overflow-auto bg-white d-flex flex-column">
+
+        <section class="py-2 px-5 pb-3 bg-white sticky-top">
+            <ul class="nav nav-pills flex-column flex-sm-row" id="room_tab" role="tablist">
+
+                <li class="nav-item flex-fill" role="presentation">
+                    <button class="nav-link w-100 text-center active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        <i class="fa fa-home me-2"></i> My Home</button>
+                </li>
+                <li class="flex-fill flex-fill text-sm-center nav-item" role="presentation">
+                    <button class="nav-link w-100 text-center" id="living-room" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        <i class="fa fa-circle me-2"></i> Living Room</button>
+                </li>
+                <li class="flex-fill flex-fill text-sm-center nav-item" role="presentation">
+                    <button class="nav-link w-100 text-center" id="bedroom-room" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        <i class="fa fa-circle me-2"></i> Master Bedroom</button>
+                </li>
+                <li class="flex-fill flex-fill text-sm-center nav-item" role="presentation">
+                    <button class="nav-link new w-100 text-center" >
+                        <i class="fa fa-plus-circle me-2"></i> Add New Room</button>
+                </li>
+            </ul>
+
+
+        </section>
+
+        <section class="px-5 py-4">
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane animated fadeIn fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <div class="mb-3 border-bottom">
+                    <div class="float-end text-end">
+                        <h2 class="m-0 ">8:00 AM</h2>
+                        <p class="font-gray font-sm">Tuesday, 04 January 2022</p>
+                    </div>
+
+                    <h2 class="m-0 ">Mika's Home</h2>
+                    <p class="font-gray font-sm">Wear a mask, have a nice day</p>
+                    </div>
+
+
+
+
+                    <div class="group mb-5 mt-5 pt-4">
+
+                        <div class="row">
+                            <div class="col-lg-3 text-center">
+                                <h6>All Lights</h6>
+                                <div class="btn-group switch_toggle" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" >
+                                    <label class="btn btn-outline-primary" for="btnradio1">ON</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="btnradio2">OFF</label>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 text-center">
+                                <h6>All Curtains</h6>
+                                <div class="btn-group switch_toggle" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio3" autocomplete="off" >
+                                    <label class="btn btn-outline-primary" for="btnradio3">OPEN</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio2" id="btnradio4" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="btnradio4">CLOSE</label>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 text-center">
+                                <h6>All Air Conditions</h6>
+                                <div class="btn-group switch_toggle" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio3" id="btnradio5" autocomplete="off" >
+                                    <label class="btn btn-outline-primary" for="btnradio5">ON</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio3" id="btnradio6" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="btnradio6">OFF</label>
+
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 text-center">
+                                <h6>All Stereos</h6>
+                                <div class="btn-group switch_toggle" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio4" id="btnradio7" autocomplete="off" >
+                                    <label class="btn btn-outline-primary" for="btnradio7">ON</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio4" id="btnradio8" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="btnradio8">OFF</label>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="group">
+
+                    <label class="group_label">Lights</label>
+
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card border_radius device active"  data-bs-toggle="offcanvas" data-bs-target="#light-canvas" aria-controls="light-canvas">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="m-0 brand_name">Philips</p>
+                                    <h5 class="">Main Lights</h5>
+                                    <p class="device_status font-xs text-uppercase text-primary">70% Brightness</p>
+                                        </div>
+                                        <img src="../../cdn/images/brands/philips.png" class="w-max-80 rounded">
+                                    </div>
+
+                                    <div class="mt-auto d-flex align-items-center">
+
+                                        <div class="icon rounded-circle">
+                                            <img src="../../cdn/images/icons/bulb.png" class="w-max-50">
+                                        </div>
+                                        <p class="m-0 font-sm-2">
+                                            ON
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                   <i class="fa fa-info-circle text-warning me-2"></i> Click me to see more
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card border_radius device active">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="m-0 brand_name">Generic</p>
+                                            <h5 class="">Rope Lights</h5>
+                                            <p class="device_status font-xs text-uppercase text-primary">Switch</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-auto d-flex justify-content-between align-items-center">
+
+                                        <div class="icon rounded-circle">
+                                            <img src="../../cdn/images/icons/switch.png" class="w-max-50">
+                                        </div>
+                                        <p class="mb-0 me-auto font-sm-2">
+                                            ON
+                                        </p>
+
+                                        <div class=" w-25 p-0 form-switch">
+                                                <input class="form-check-input border w-100 ms-0 p-3" type="checkbox">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="card border_radius device">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="m-0 brand_name">Generic</p>
+                                            <h5 class="">Outdoor Security Lights</h5>
+<!--                                            <p class="device_status font-xs text-uppercase text-primary">Light Switch</p>-->
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-auto d-flex justify-content-between align-items-center">
+
+                                        <div class="icon rounded-circle">
+                                            <img src="../../cdn/images/icons/light.png" class="w-max-50">
+                                        </div>
+                                        <p class="mb-0 me-auto font-sm-2">
+                                            OFF
+                                        </p>
+
+                                        <div class=" w-25 p-0 form-switch">
+                                            <input class="form-check-input border w-100 ms-0 p-3" type="checkbox">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card device">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="m-0 brand_name">Generic</p>
+                                            <h5 class="">Office Lamp</h5>
+                                            <p class="device_status font-xs text-uppercase text-primary">Lamp</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mt-auto d-flex align-items-center">
+
+                                        <div class="icon rounded-circle">
+                                            <img src="../../cdn/images/icons/lamp.png" class="w-max-50">
+                                        </div>
+                                        <p class="m-0 font-sm-2">
+                                            OFF
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+
+                    <div class="group">
+
+                        <label class="group_label">Stereo</label>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card border_radius device active" data-bs-toggle="offcanvas" data-bs-target="#homepod-canvas" aria-controls="homepod-canvas">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Apple</p>
+                                                <h5 class="">Homepods</h5>
+                                                <p class="device_status font-xs text-uppercase text-primary">Now Playing</p>
+                                            </div>
+                                            <img src="../../cdn/images/brands/apple_logo.png" class="w-max-80 ">
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/homepod.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                ON
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Home Theater</h5>
+                                                <p class="device_status font-xs text-uppercase text-primary">Music</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/sound.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="group">
+
+                        <label class="group_label">Laundry</label>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">LG</p>
+                                                <h5 class="">Washing machine</h5>
+
+                                            </div>
+                                            <img src="../../cdn/images/brands/lg-logo.png" class="w-max-80">
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/washing_machine.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device active">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">LG</p>
+                                                <h5 class="">Dryer</h5>
+                                                <p class="device_status font-xs text-uppercase text-primary">Time Left: 5min 20sec</p>
+                                            </div>
+                                            <img src="../../cdn/images/brands/lg-logo.png" class="w-max-80">
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/dryer.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                ON
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="group">
+
+                        <label class="group_label">Others</label>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card border_radius device active" data-bs-toggle="offcanvas" data-bs-target="#ac-canvas" aria-controls="ac-canvas">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Skyrun</p>
+                                                <h5 class="">Living Room A/C</h5>
+                                                <p class="device_status font-xs text-uppercase text-primary">Temperature: 24</p>
+                                            </div>
+                                            <img src="../../cdn/images/brands/skyrun-logo.png" class="w-max-80 ">
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/aircon.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                ON
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <i class="fa fa-info-circle text-warning me-2"></i> Click me to see more
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Skyrun</p>
+                                                <h5 class="">Bedroom A/C</h5>
+
+                                            </div>
+                                            <img src="../../cdn/images/brands/skyrun-logo.png" class="w-max-80 ">
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/aircon.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Living Room Blinds</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/blinds.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                CLOSED
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Entrance Door</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/door.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                LOCKED
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Living Room Fan</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/fan.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Garage Door</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/garage.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Main Gate</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/gate.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                CLOSED
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <p class="m-0 brand_name">Generic</p>
+                                                <h5 class="">Socket</h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-auto d-flex align-items-center">
+
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/wall_socket.png" class="w-max-50">
+                                            </div>
+                                            <p class="m-0 font-sm-2">
+                                                OFF
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="group">
+
+                        <label class="group_label">Security Cameras</label>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card border_radius device">
+                                    <div class="card-body d-flex flex-column">
+
+                                        <div style='position:relative; padding-bottom:calc(56.25% + 44px)'><iframe class="border_radius" src='https://gfycat.com/ifr/EvergreenBoringArgentineruddyduck' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div><p></p>
+
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="icon rounded-circle">
+                                                <img src="../../cdn/images/icons/cctv.png" class="w-max-50">
+                                            </div>
+                                            <div class="me-auto">
+                                                <p class="m-0 brand_name">Winpossee</p>
+                                                <h5 class="">Frontdoor Camera</h5>
+
+                                            </div>
+                                            <img src="../../cdn/images/brands/winposee.jpg" class="w-max-80 rounded">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">..23.</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">.42..</div>
+            </div>
+
+        </section>
+
+
+
+        <section>
+            <div class="offcanvas d-flex flex-column offcanvas-end w-30" tabindex="-1" id="light-canvas" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <div class="d-flex w-100 align-items-center justify-content-between">
+                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn  rounded-circle text-uppercase bg-black font-white no_border">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <div class="text-center">
+                            <p class="m-0 text-uppercase font-xs font-gray">Philips</p>
+                            <h4 class="">Main Lights</h4>
+                            <p class="badge bg-primary-transparent font-xs font-gray"><i class="fa fa-circle me-2"></i> Living Room</p>
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="px-3" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fw-light fa-ellipsis-v font-black fa-2x"></i>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+
+                    <div class="col-8 mx-auto">
+                        <div class="d-flex align-items-center p-0 form-switch">
+                            <div class="col-3 text-center ">
+                                <h6 class="m-0">OFF</h6>
+                            </div>
+                            <div class="col-6">
+                            <input class="form-check-input w-100 ms-0 p-4" type="checkbox" id="flexSwitchCheckDefault">
+                                </div>
+                            <div class="col-3 text-center">
+                                <h6 class="m-0">ON</h6>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="value_container animated fadeInUp mx-auto mt-5 d-flex flex-column justify-content-center align-items-center">
+                        <div class="top_content text-center">
+                            <p class="m-0 status">Brightness</p>
+                            <h1 class="font-xl-3">70%</h1>
+                        </div>
+                    </div>
+
+<!--                    <div class="mt-5">-->
+<!--                        <div class="col-lg-10 text-center mx-auto">-->
+<!--                        <input type="range" value="70" min="0" max="100" class="form-range">-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="mt-5">
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn btn-action"><i class="fa fa-minus"></i></button>
+                                <h6 class="m-0">Decrease</h6>
+                            </div>
+                            <div class="col text-center">
+                                <button class="btn btn-action"><i class="fa fa-plus"></i></button>
+                                <h6 class="m-0">Increase</h6>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="footer mt-auto text-center border-top p-3">
+                   <p class="m-0 font-gray"><i class="fa fa-info-circle"></i> Pass any other extra required information here</p>
+                </div>
+            </div>
+
+            <div class="offcanvas d-flex flex-column offcanvas-end w-30" tabindex="-1" id="homepod-canvas" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <div class="d-flex w-100 align-items-center justify-content-between">
+                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn  rounded-circle text-uppercase bg-black font-white no_border">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <div class="text-center">
+                            <p class="m-0 text-uppercase font-xs font-gray">Apple</p>
+                            <h4 class="">Homepods</h4>
+                            <p class="badge bg-primary-transparent font-xs font-gray"><i class="fa fa-circle me-2"></i> Master Bedroom</p>
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="px-3" href="#" role="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fw-light fa-ellipsis-v font-black fa-2x"></i>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+
+                    <div class="value_container square animated fadeInUp mx-auto mt-4 d-flex flex-column justify-content-center align-items-center">
+                        <div class="top_content text-center">
+                          <img src="../../cdn/images/k9.jpg" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="col-10 mt-3 mx-auto">
+                    <h4 class="m-0">K9</h4>
+                        <p class="font-gray">Shey you fit pay? (Freestyle)</p>
+
+                        <input type="range" value="70" min="0" max="100" class="form-range">
+                        <div class="d-flex font-xs justify-content-between">
+                            <label>0:00</label>
+                            <label>3:58</label>
+                        </div>
+                    </div>
+
+                    <!--                    <div class="mt-5">-->
+                    <!--                        <div class="col-lg-10 text-center mx-auto">-->
+                    <!--                        <input type="range" value="70" min="0" max="100" class="form-range">-->
+
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+
+                    <div class="mt-5">
+
+                        <div class="row">
+                            <div class="col mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-step-backward"></i></button>
+                                <h6 class="m-0">Previous</h6>
+                            </div>
+                            <div class="col mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-play"></i> / <i class="fa fa-pause"></i></button>
+                                <h6 class="m-0">Play/Pause</h6>
+                            </div>
+                            <div class="col mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-step-forward"></i></button>
+                                <h6 class="m-0">Next</h6>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="footer mt-auto text-center border-top p-3">
+                    <p class="m-0 font-gray"><i class="fa fa-info-circle"></i> Pass any other extra required information here</p>
+                </div>
+            </div>
+
+
+
+            <div class="offcanvas d-flex flex-column offcanvas-end w-30" tabindex="-1" id="ac-canvas" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <div class="d-flex w-100 align-items-center justify-content-between">
+                        <button data-bs-dismiss="offcanvas" aria-label="Close" class="btn  rounded-circle text-uppercase bg-black font-white no_border">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+                        <div class="text-center">
+                            <p class="m-0 text-uppercase font-xs font-gray">SKYRUN</p>
+                            <h4 class="">Living Room A/C</h4>
+                            <p class="badge bg-primary-transparent font-xs font-gray"><i class="fa fa-circle me-2"></i> Living Room</p>
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="px-3" href="#" role="button" id="actionMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fw-light fa-ellipsis-v font-black fa-2x"></i>
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="actionMenu2">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+
+                    <div class="col-8 mx-auto">
+                        <div class="d-flex align-items-center p-0 form-switch">
+                            <div class="col-3 text-center ">
+                                <h6 class="m-0">OFF</h6>
+                            </div>
+                            <div class="col-6">
+                                <input checked class="form-check-input w-100 ms-0 p-4" type="checkbox" id="action2">
+                            </div>
+                            <div class="col-3 text-center">
+                                <h6 class="m-0">ON</h6>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="value_container animated fadeInUp mx-auto mt-5 d-flex flex-column justify-content-center align-items-center">
+                        <div class="top_content text-center">
+                            <p class="m-0 status font-xs">Temperature</p>
+                            <h1 class="font-xl">24&deg;C</h1>
+                        </div>
+                        <div class="bottom_content row text-center">
+                            <div class="col border-end py-2">
+                            <p class="m-0 font-xs status">Mode</p>
+                                <i class="fa fa-snowflake fa-2x"></i>
+                            </div>
+                            <div class="col border-end py-2">
+                                <p class="m-0 font-xs status">Turbo</p>
+                                <h5>OFF</h5>
+                            </div>
+                            <div class="col py-2">
+                                <p class="m-0 font-xs status">Swing</p>
+                                <h5>ON</h5>
+                            </div>
+                            <div class="col-12 border-top mt-2 py-2">
+                                <p class="m-0 status">FAN</p>
+                                <i class="fa fa-signal fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--                    <div class="mt-5">-->
+                    <!--                        <div class="col-lg-10 text-center mx-auto">-->
+                    <!--                        <input type="range" value="70" min="0" max="100" class="form-range">-->
+
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+
+                    <div class="mt-5">
+
+                        <div class="row">
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-minus"></i></button>
+                                <h6 class="m-0">Decrease</h6>
+                            </div>
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-plus"></i></button>
+                                <h6 class="m-0">Increase</h6>
+                            </div>
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-rss"></i></button>
+                                <h6 class="m-0">Swing</h6>
+                            </div>
+
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-wind"></i></button>
+                                <h6 class="m-0">Turbo</h6>
+                            </div>
+
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-fan"></i> <i class="fa fa-chevron-up"></i></button>
+                                <h6 class="m-0">Increase Fan</h6>
+                            </div>
+
+                            <div class="col-4 mb-3 text-center">
+                                <button class="btn btn-action"><i class="fa fa-fan"></i> <i class="fa fa-chevron-down"></i></button>
+                                <h6 class="m-0">Decrease Fan</h6>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="footer mt-auto text-center border-top p-3">
+                    <p class="m-0 font-gray"><i class="fa fa-info-circle"></i> Pass any other extra required information here</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div class="border-top p-2 d-flex justify-content-between px-4 w-100 mt-auto">
+            Copyright &copy; 2021
+
+            <div>
+            <a href="" class=" me-4">Privacy policy</a>
+            <a href="" class="">Terms & conditions</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="../../cdn/js/sweetalert.min.js"></script>
+<script src="../../cdn/js/script.js"></script>
+
+</body>
+</html>
