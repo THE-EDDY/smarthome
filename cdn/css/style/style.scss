@@ -131,6 +131,16 @@ body{
   }
 }
 
+.side_padding{
+  //padding-left: 3rem !Important;
+ // padding-right: 3rem !Important;
+
+  @include mobile
+  {
+    padding-left: 1rem !Important;
+    padding-right: 1rem !Important;
+  }
+}
 
 .bg-j
 {
@@ -209,9 +219,31 @@ body{
 
 #room_tab {
 
+  @include mobile{
+    white-space: nowrap !Important;
+    overflow: auto;
+    width: 100%;
+    display: inline-block;
+  }
+
+  @include tablet{
+    white-space: nowrap !Important;
+    overflow: auto;
+    width: 100%;
+    display: inline-block;
+  }
+
   .nav-item {
 
     margin-right: 10px;
+
+    @include mobile{
+      display: inline-block;
+    }
+
+    @include tablet{
+      display: inline-block;
+    }
 
     .nav-link {
       background: var(--skyblue_color);
@@ -294,6 +326,12 @@ body{
   border-radius:12px !Important;
   overflow: hidden;
 
+  &.locked
+  {
+    min-height: 9rem;
+  }
+
+
   &:hover
   {
     box-shadow: 1px 3px 6px #d9d9d9;
@@ -302,7 +340,7 @@ body{
 
   &.active
   {
-    background: var(--primary_colour);
+    background: var(--primary_colour) !important;
     color: #fff !Important;
 
     .brand_name

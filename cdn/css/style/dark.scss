@@ -1,0 +1,115 @@
+$mobile-size: 320px;
+$tablet-size: 768px;
+$desktop-size: 1024px;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@mixin mobile {
+  @media (min-width: #{$mobile-size}) and (max-width: #{$tablet-size - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-size}) and (max-width: #{$desktop-size - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-size}) {
+    @content;
+  }
+}
+
+:root {
+  --primary_colour: rgb(71,147,96);
+  --dark_color: #111;
+  --dark_color_transparent: rgba(204, 203, 203, 0.11);
+  --dark_color_secondary: #222;
+  --primary_colour_transparent: rgba(114, 244, 27, 0.11);
+  --primary_colour_2: #46CB5C;
+  --secondary_colour: #3A405F;
+  --skyblue_color: rgb(240,245,254);
+}
+
+*
+{
+  outline: none !Important;
+}
+
+body
+{
+  font-family: 'Roboto', sans-serif !Important;
+  font-size: 14px;
+  color: #fff;
+  background: var(--dark_color) !important;
+}
+
+.bg-white
+{
+  background: var(--dark_color) !important;
+}
+
+.border-top,.border-start,.border-bottom,.border-end,.border_top,.border_right,.border_bottom,.border_right
+{
+  border-color: var(--dark_color_secondary) !Important;
+}
+
+.dark_color
+{
+  color: #fff !Important;
+}
+
+.switch_toggle
+{
+  background: var(--dark_color_secondary) !Important;
+}
+
+.device{
+  background: var(--dark_color_secondary) !Important;
+
+  &:hover
+  {
+    box-shadow: 1px 3px 6px #333 !Important;
+  }
+}
+
+.offcanvas
+{
+  background: var(--dark_color_secondary) !Important;
+  color: #fff !Important;
+
+  .value_container
+  {
+    background:var(--dark_color);
+    border-color: var(--dark_color_transparent);
+    //color: #000 !Important;
+    box-shadow: -5px 3px 16px #414141 !Important;
+  }
+
+  i{
+    color: #fff !Important;
+  }
+}
+
+.bottom_content
+{
+  border-color: var(--dark_color_secondary) !Important;
+}
+
+.btn-action
+{
+  background: var(--dark_color) ;
+  color: #fff;
+}
+
+.modal-content
+{
+  background: var(--dark_color_transparent) ;
+}
+
+
+
+
